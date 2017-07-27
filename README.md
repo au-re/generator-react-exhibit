@@ -5,12 +5,15 @@
 # react-exhibit-boilerplate
 
 A boilerplate to create your own React component library, built with [create-react-app](https://github.com/facebookincubator/create-react-app).
+Uses the [react-exhibit](https://github.com/au-re/react-exhibit) components for visualization.
+
+You can view it in action [here](https://au-re.github.io/react-exhibit/).
 
 ## Using the boilerplate
 
 Clone the repository
 
-```
+```shell
 git clone https://github.com/au-re/react-exhibit-boilerplate.git
 cd react-exhibit-boilerplate
 ```
@@ -27,7 +30,7 @@ In addition you can comment your code using JSDOC syntax. This information will
 then also be displayed in the documentation.
 
 e.g.
-```
+```js
 /**
  * A showcase component, renders a react component and displays source code.
  *
@@ -46,7 +49,7 @@ Only comments of a component with a demo will be shown.
 
 To view your component documentation run:
 
-```
+```shell
 npm start
 ```
 
@@ -54,13 +57,13 @@ npm start
 
 You can create a production ready website for your documentation with:
 
-```
+```shell
 npm run build
 ```
 
 You can build your library with:
 
-```
+```shell
 npm run build:dist
 ```
 
@@ -74,7 +77,7 @@ exported here will be part of your library.
 Before publishing or commiting your components the linter and tests will
 automatically be run. You can also run them manually through:
 
-```
+```shell
 npm run test
 ```
 
@@ -84,7 +87,7 @@ You can easily deploy your library documentation to github pages. To do that,
 add the field `homepage: <YOUR_GITHUB_PAGE_URL>` to `package.json`.
 
 Then run:
-```
+```shell
 npm run deploy
 ```
 
