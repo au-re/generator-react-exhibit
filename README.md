@@ -74,8 +74,8 @@ exported here will be part of your library.
 
 ### Testing your components
 
-Before publishing or commiting your components the linter and tests will
-automatically be run. You can also run them manually through:
+Before publishing or commiting your components, the linter and tests will
+automatically run. You can also run them manually with:
 
 ```shell
 npm run test

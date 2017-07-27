@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "React component library boilerplate",
   "main": "dist/index.js",
+  "license": "MIT",
   "scripts": {
     "build:dist": "node scripts/build.js",
     "build": "node scripts/build-docs.js",
@@ -25,7 +26,7 @@
     "markdown-to-jsx": "^5.4.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-exhibit": "^1.0.2",
+    "react-exhibit": "^1.1.2",
     "react-prism": "^4.3.0",
     "react-router-dom": "^4.1.2",
     "require-dir": "^0.3.2"
@@ -117,5 +118,9 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/au-re/react-exhibit-boilerplate.git"
   }
 }
