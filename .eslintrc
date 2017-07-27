@@ -9,10 +9,6 @@
     "react-app"
   ],
   "rules": {
-    "quotes": [
-      "error",
-      "double"
-    ],
     "import/no-webpack-loader-syntax": "off",
     "valid-jsdoc": [
       "error",
