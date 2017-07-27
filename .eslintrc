@@ -1,0 +1,27 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "react-app"
+  ],
+  "rules": {
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "import/no-webpack-loader-syntax": "off",
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireParamDescription": true,
+        "requireReturn": true,
+        "requireReturnDescription": true,
+        "requireReturnType": true
+      }
+    ]
+  }
+}
