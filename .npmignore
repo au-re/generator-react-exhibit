@@ -4,3 +4,5 @@ scripts
 public
 build
 config
+.npmignore
+.eslintrc

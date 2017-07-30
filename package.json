@@ -11,7 +11,7 @@
     "clean": "rm -rf node_modules build docs dist && npm i",
     "commit": "npm run check:staged && git-cz",
     "deploy": "gh-pages -d build",
-    "lint": "eslint --ignore-pattern 'src/**/*.demo.js' --ignore-pattern 'src/**/*.test.js' 'src/**/*.js'",
+    "lint": "eslint --ignore-pattern 'src/**/*.test.js' 'src/**/*.js'",
     "postcheckout": "npm run clean",
     "postmerge": "npm run clean",
     "predeploy": "npm run build",
@@ -26,7 +26,7 @@
     "markdown-to-jsx": "^5.4.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-exhibit": "^1.1.2",
+    "react-exhibit": "^1.3.0",
     "react-prism": "^4.3.0",
     "react-router-dom": "^4.1.2",
     "require-dir": "^0.3.2"

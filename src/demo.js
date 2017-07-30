@@ -63,6 +63,6 @@ function requireAllDemos() {
 
 ReactDOM.render(<Demo
   readme={<Markdown>{readme}</Markdown>}
-  label="Exhibit"
+  label="react-exhibit-boilerplate"
   components={requireAllDemos()} />,
   document.getElementById("root"));
