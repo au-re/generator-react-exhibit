@@ -4,6 +4,9 @@
   "license": "MIT",
   "description": "Easily generate a React component library",
   "main": "index.js",
+  "scripts": {
+    "commit": "git-cz"
+  },
   "files": [
     "generators"
   ],
