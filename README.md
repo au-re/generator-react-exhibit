@@ -11,7 +11,7 @@ visualization.
 
 You can view it in action [here](https://au-re.github.io/react-exhibit/).
 
-## Using the generator
+## Getting Started
 
 You will need [Yeoman](http://yeoman.io/) installed to use this generator.
 You can install both with the following commands:
@@ -37,10 +37,10 @@ npm start
 
 Then open http://localhost:3000/ to see your library documentation.
 
-### Demoing your components
+## Demoing your components
 
-You can add a `demo` folder in each component folder. In the demo folder you can
-add as many demos as you want. Each demo file will automatically be rendered and
+You can add a `demo` folder in each of your component folders. In the demo
+folder you can add as many demos as you want. Each demo file will automatically be rendered and
 the source displayed.
 
 In addition you can comment your code using JSDOC syntax. This information will
@@ -61,8 +61,8 @@ const Showcase = ({ source, demo }) => ( ... );
 
 **NOTE:**
 
-Only comments with the `@export` tag will be shown in the documentation.
-Only comments of a component with a demo will be shown.
+- Only comments with the `@export` tag will be shown in the documentation.
+- Only comments of a component with a demo will be shown.
 
 To view your component documentation run:
 
@@ -70,7 +70,9 @@ To view your component documentation run:
 npm start
 ```
 
-### Building your components
+Then open http://localhost:3000/ to see your library documentation.
+
+## Building your components
 
 You can create a production ready website for your documentation with:
 
@@ -78,7 +80,14 @@ You can create a production ready website for your documentation with:
 npm run build
 ```
 
-You can build your library with:
+To view the production ready documentation you can run:
+
+```shell
+npm install -g serve
+serve -s build
+```
+
+Before publishing your library to npm, you will need to build it:
 
 ```shell
 npm run build:dist
@@ -89,7 +98,7 @@ After running this command your library will be found in the `dist` folder.
 Make sure you export your components from `index.js`. Only the components
 exported here will be part of your library.
 
-### Testing your components
+## Testing your components
 
 Before publishing your components, the linter and tests will automatically run.
 You can also run them manually with:
@@ -98,7 +107,7 @@ You can also run them manually with:
 npm run test
 ```
 
-### Publishing your library
+## Publishing your library
 
 You can easily deploy your library documentation to github pages. To do that,
 add the field `homepage: <YOUR_GITHUB_PAGE_URL>` to `package.json`.

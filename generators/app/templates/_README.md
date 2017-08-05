@@ -2,8 +2,8 @@
 
 ## Demoing your components
 
-You can add a `demo` folder in each component folder. In the demo folder you can
-add as many demos as you want. Each demo file will automatically be rendered and
+You can add a `demo` folder in each of your component folders. In the demo
+folder you can add as many demos as you want. Each demo file will automatically be rendered and
 the source displayed.
 
 In addition you can comment your code using JSDOC syntax. This information will
@@ -24,14 +24,16 @@ const Showcase = ({ source, demo }) => ( ... );
 
 **NOTE:**
 
-Only comments with the `@export` tag will be shown in the documentation.
-Only comments of a component with a demo will be shown.
+- Only comments with the `@export` tag will be shown in the documentation.
+- Only comments of a component with a demo will be shown.
 
 To view your component documentation run:
 
 ```shell
 npm start
 ```
+
+Then open http://localhost:3000/ to see your library documentation.
 
 ## Building your components
 
@@ -41,7 +43,14 @@ You can create a production ready website for your documentation with:
 npm run build
 ```
 
-You can build your library with:
+To view the production ready documentation you can run:
+
+```shell
+npm install -g serve
+serve -s build
+```
+
+Before publishing your library to npm, you will need to build it:
 
 ```shell
 npm run build:dist
