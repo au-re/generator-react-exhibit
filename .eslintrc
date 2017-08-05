@@ -1,23 +1,103 @@
 {
   "env": {
     "es6": true,
+    "commonjs": true,
     "browser": true,
-    "jest": true
+    "jest": true,
+    "node": true,
+    "mocha": true
   },
   "extends": [
-    "eslint:recommended",
-    "react-app"
+    "eslint:recommended"
   ],
   "rules": {
-    "import/no-webpack-loader-syntax": "off",
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "arrow-parens": "error",
+    "arrow-spacing": "error",
+    "camelcase": "warn",
+    "comma-dangle": "off",
+    "consistent-this": "warn",
+    "eol-last": [
+      "error",
+      "unix"
+    ],
+    "func-names": "error",
+    "handle-callback-err": "warn",
+    "key-spacing": "error",
+    "max-depth": "error",
+    "max-len": "off",
+    "max-lines": "error",
+    "max-statements-per-line": "warn",
+    "no-console": "warn",
+    "no-continue": "error",
+    "no-duplicate-imports": "error",
+    "no-else-return": "warn",
+    "no-floating-decimal": "error",
+    "no-lonely-if": "warn",
+    "no-loop-func": "error",
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 2
+      }
+    ],
+    "no-tabs": "error",
+    "no-trailing-spaces": "error",
+    "no-useless-call": "warn",
+    "no-useless-rename": "warn",
+    "no-useless-return": "warn",
+    "no-var": "error",
+    "no-void": "error",
+    "no-whitespace-before-property": "warn",
+    "object-curly-spacing": "off",
+    "object-shorthand": "warn",
+    "operator-linebreak": "error",
+    "prefer-arrow-callback": "warn",
+    "prefer-const": "warn",
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": "error",
+    "space-before-function-paren": "off",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "block": {
+          "balanced": true,
+          "exceptions": [
+            "*"
+          ],
+          "markers": [
+            "!"
+          ]
+        },
+        "line": {
+          "exceptions": [
+            "-"
+          ],
+          "markers": [
+            "/"
+          ]
+        }
+      }
+    ],
     "valid-jsdoc": [
       "error",
       {
-        "requireParamDescription": true,
-        "requireReturn": true,
-        "requireReturnDescription": true,
+        "requireParamDescription": false,
+        "requireReturn": false,
+        "requireReturnDescription": false,
         "requireReturnType": true
       }
-    ]
+    ],
+    "yoda": "warn"
   }
 }

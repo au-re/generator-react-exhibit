@@ -6,6 +6,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import readme from "../README.md";
 
+/* NOTE: There should be no need to modify this file! This file should be in an
+own repository in the future and handled through webpack. */
+
 /* FETCH THE DEMO DATA */
 
 // .../MySubComponent/${stop}/... -> 'MySubComponent'
@@ -63,6 +66,6 @@ function requireAllDemos() {
 
 ReactDOM.render(<Demo
   readme={<Markdown>{readme}</Markdown>}
-  label="react-exhibit-boilerplate"
+  label="<%= appName %>"
   components={requireAllDemos()} />,
   document.getElementById("root"));

@@ -1,6 +1,6 @@
 {
-  "short_name": "Exhibit",
-  "name": "Sample React Component Library",
+  "short_name": "<%= appName %>",
+  "name": "<%= appName %>",
   "icons": [
     {
       "src": "favicon.ico",
