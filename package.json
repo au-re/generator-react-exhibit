@@ -2,7 +2,7 @@
   "name": "generator-react-exhibit",
   "version": "2.0.2",
   "license": "MIT",
-  "description": "Easily generate a React component library",
+  "description": "Easily generate your own React component library, documentation included.",
   "main": "index.js",
   "scripts": {
     "commit": "git-cz"
@@ -17,10 +17,15 @@
     "chalk": "^2.0.1",
     "yeoman-generator": "^1.1.1"
   },
-  "author": "Aurelien Franky",
+  "author": {
+    "name": "Aurélien Franky",
+    "email": "aurelienhf@hotmail.com",
+    "url": "https://www.npmjs.com/~au-re"
+  },
+  "homepage": "https://github.com/au-re/generator-react-exhibit/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/au-re/generator-react-exhibit.git"
+    "url": "https://github.com/au-re/generator-react-exhibit"
   },
   "config": {
     "commitizen": {

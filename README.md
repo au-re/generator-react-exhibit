@@ -4,9 +4,9 @@
 
 # generator-react-exhibit
 
-A generator to create your own React component library, built on top of
-[create-react-app](https://github.com/facebookincubator/create-react-app).
-Uses the [react-exhibit](https://github.com/au-re/react-exhibit) components for
+A generator to create your own React component library, including the
+documentation. It is built on top of [create-react-app](https://github.com/facebookincubator/create-react-app).
+It uses the [react-exhibit](https://github.com/au-re/react-exhibit) components for
 visualization.
 
 You can view it in action [here](https://au-re.github.io/react-exhibit/).
