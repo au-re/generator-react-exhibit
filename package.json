@@ -1,6 +1,6 @@
 {
   "name": "generator-react-exhibit",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "description": "Easily generate your own React component library, documentation included.",
   "main": "index.js",
