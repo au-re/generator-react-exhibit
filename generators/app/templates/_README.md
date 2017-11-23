@@ -49,15 +49,15 @@ To view the production ready documentation you can run:
 serve -s build
 ```
 
-Before publishing your library to npm, you will need to build it:
+You can build your library with:
 
 ```shell
 npm run build:lib
 ```
 
-After running this command your library will be found in the `dist` folder.
+After running this command your library will be found in the `lib` folder.
 
-Make sure you export your components from `index.js`. Only the components
+Make sure you export your components from `lib.js`. Only the components
 exported here will be part of your library.
 
 ## Testing your components
@@ -75,10 +75,13 @@ You can easily deploy your library documentation to github pages. To do that,
 add the field `homepage: <YOUR_GITHUB_PAGE_URL>` to `package.json`.
 
 Then run:
+
 ```shell
 npm run deploy
 ```
 
 You can publish your library to `npm`. To do that, simply run:
 
-`npm publish`
+```shell
+npm publish
+```
