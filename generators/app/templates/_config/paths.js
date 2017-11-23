@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
@@ -40,12 +42,12 @@ function getServedPath(appPackageJson) {
 module.exports = {
   dotenv: resolveApp('.env'),
   appBuild: resolveApp('build'),
-  appDist: resolveApp('dist'),
+  appLib: resolveApp('lib'),
   appPublic: resolveApp('public'),
-  appDocs: resolveApp('docs'),
   appHtml: resolveApp('public/index.html'),
-  appDemoJs: resolveApp('src/demo.js'),
   appIndexJs: resolveApp('src/index.js'),
+  appLibJs: resolveApp('src/lib.js'),
+  appReadme: resolveApp('README.md'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),

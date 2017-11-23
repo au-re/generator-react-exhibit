@@ -1,13 +1,12 @@
-import "../node_modules/react-exhibit/dist/css/main.css";
+/*  eslint-disable */
+import "../node_modules/react-exhibit/lib/css/main.css";
 
 import { Demo } from "react-exhibit";
 import Markdown from "markdown-to-jsx";
 import React from "react";
 import ReactDOM from "react-dom";
 import readme from "../README.md";
-
-/* NOTE: There should be no need to modify this file! This file should be in an
-own repository in the future and handled through webpack. */
+import registerServiceWorker from './registerServiceWorker';
 
 /* FETCH THE DEMO DATA */
 
@@ -46,7 +45,7 @@ function requireAllDemos() {
   demos.keys().forEach((key) => {
     const name = extractComponentName(key, "demo");
     if (!components[name]) {
-      components[name] = { source: [], demo: [] }
+      components[name] = { source: [], demo: [] };
     }
     components[name].source.push(demoSources(key));
     components[name].demo.push(demos(key));
@@ -66,6 +65,9 @@ function requireAllDemos() {
 
 ReactDOM.render(<Demo
   readme={<Markdown>{readme}</Markdown>}
+  baseURL={process.env.PUBLIC_URL}
   label="<%= appName %>"
   components={requireAllDemos()} />,
   document.getElementById("root"));
+
+registerServiceWorker();
