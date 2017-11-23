@@ -46,14 +46,13 @@ npm run build
 To view the production ready documentation you can run:
 
 ```shell
-npm install -g serve
 serve -s build
 ```
 
 Before publishing your library to npm, you will need to build it:
 
 ```shell
-npm run build:dist
+npm run build:lib
 ```
 
 After running this command your library will be found in the `dist` folder.
