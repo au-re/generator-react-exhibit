@@ -2,8 +2,8 @@ import "./index.css";
 
 import DemoComponent from "./DemoComponent";
 
-// COMPONENTS AVAILABLE IN THE NPM PACKAGE
+// THE COMPONENTS YOU WANT TO MAKE AVAILABLE IN YOUR LIBRARY
 
 export {
   DemoComponent
-}
+};

@@ -1,4 +1,4 @@
-import { DemoComponent } from "../index";
+import { DemoComponent } from "../lib";
 import React from "react";
 import ReactDOM from "react-dom";
 
