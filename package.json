@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "chalk": "^2.3.0",
-    "yeoman-generator": "^1.1.1"
+    "yeoman-generator": "^2.0.1"
   },
   "author": {
     "name": "Aurélien Franky",
