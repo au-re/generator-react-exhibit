@@ -5,7 +5,10 @@
   "description": "Easily generate your own React component library, documentation included.",
   "main": "index.js",
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "clean": "rm -rf node_modules lib build && npm i",
+    "postcheckout": "npm run clean",
+    "postmerge": "npm run clean"
   },
   "files": [
     "generators"
@@ -14,7 +17,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "chalk": "^2.0.1",
+    "chalk": "^2.3.0",
     "yeoman-generator": "^1.1.1"
   },
   "author": {
@@ -33,8 +36,8 @@
     }
   },
   "devDependencies": {
-    "eslint": "^4.4.0",
+    "eslint": "^4.11.0",
     "commitizen": "^2.9.6",
-    "cz-conventional-changelog": "^2.0.0"
+    "cz-conventional-changelog": "^2.1.0"
   }
 }
