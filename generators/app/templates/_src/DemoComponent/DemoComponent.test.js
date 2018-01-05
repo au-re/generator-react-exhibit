@@ -6,5 +6,5 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
 
   ReactDOM.render(<DemoComponent />, div);
-  ReactDOM.render(<DemoComponent label="OK"/>, div);
+  ReactDOM.render(<DemoComponent label="OK" />, div);
 });

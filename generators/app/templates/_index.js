@@ -63,11 +63,15 @@ function requireAllDemos() {
 
 /* RENDER THE DEMO DATA */
 
-ReactDOM.render(<Demo
-  readme={<Markdown>{readme}</Markdown>}
-  baseURL={process.env.PUBLIC_URL}
-  label="<%= appName %>"
-  components={requireAllDemos()} />,
+ReactDOM.render(
+  <div>
+    <GithubCorner style={{ position: "fixed", zIndex: 13 }} size="80" bannerColor="#F9AE15" />
+    <Exhibit
+      readme={<Markdown>{readme}</Markdown>}
+      baseURL={process.env.PUBLIC_URL}
+      label="<%= appName %>"
+      components={requireAllDemos()} />
+  </div>,
   document.getElementById("root"));
 
 registerServiceWorker();
