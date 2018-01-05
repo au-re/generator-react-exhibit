@@ -9,12 +9,12 @@ import React from "react";
  *
  * @export
  * @param {string} [label=hello world!] - a label to be displayed under the icon
- * @return {object} - MyComponent
+ * @return {object} - DemoComponent
  */
-const MyComponent = ({ label = "hello world!" }) => (
-  <div className="MyComponent">
+const DemoComponent = ({ label = "hello world!" }) => (
+  <div className="DemoComponent">
     <Icon />
     <p>{label}</p>
   </div>);
 
-export default MyComponent;
+export default DemoComponent;

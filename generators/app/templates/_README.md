@@ -10,6 +10,7 @@ In addition you can comment your code using JSDOC syntax. This information will
 then also be displayed in the documentation.
 
 e.g.
+
 ```js
 /**
  * A showcase component, renders a react component and displays source code.

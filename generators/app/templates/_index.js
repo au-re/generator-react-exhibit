@@ -1,7 +1,8 @@
 /*  eslint-disable */
 import "../node_modules/react-exhibit/lib/css/main.css";
 
-import { Demo } from "react-exhibit";
+import { Exhibit, GithubCorner } from "react-exhibit";
+
 import Markdown from "markdown-to-jsx";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -12,13 +13,33 @@ import registerServiceWorker from './registerServiceWorker';
 
 // .../MySubComponent/${stop}/... -> 'MySubComponent'
 function extractComponentName(path, stop) {
-  const pathSplit = path.split("/");
-  return pathSplit[pathSplit.indexOf(stop) - 1];
+  const arr = path.split("/");
+  return arr[arr.indexOf(stop) - 1];
 }
 
-// only render documentation that was made by the developer
+// .../MySubComponent/${stop}/... -> .../MySubComponent
+function extractComponentPath(path, stop) {
+  const arr = path.split("/");
+  return arr.splice(0, arr.indexOf(stop)).join("/");
+}
+
+// .../MySubComponent/demo/usage.js -> usage
+function extractDemoName(path) {
+  return path.split("/").slice(-1)[0].slice(0, -3);
+}
+
+// get the file at the root of the folder
+function getComponentIndex(path) {
+  return extractComponentPath(path, "demo") + "/index.js";
+}
+
+function getComponentReadme(path) {
+  return extractComponentPath(path, "demo") + "/README.md";
+}
+
+// only render documentation with the tag "export"
 function filterDocs(docs) {
-  return docs.filter((doc) => doc.comment && doc.tags && doc.tags[0].title === "export");
+  return docs.filter((doc) => doc.comment && doc.tags);
 }
 
 /**
@@ -38,23 +59,41 @@ function filterDocs(docs) {
  */
 function requireAllDemos() {
   const components = {};
+
   const demoSources = require.context("!!raw-loader!./", true, /demo\/.*\.js$/);
   const demos = require.context("./", true, /demo\/.*\.js$/);
+
+  const readMes = require.context("./", true, /.*[^.]\/README.md$/);
   const docs = require.context("!!raw-loader!jsdoc2js-loader!./", true, /.*[^.]\/index.js/);
 
   demos.keys().forEach((key) => {
-    const name = extractComponentName(key, "demo");
-    if (!components[name]) {
-      components[name] = { source: [], demo: [] };
-    }
-    components[name].source.push(demoSources(key));
-    components[name].demo.push(demos(key));
-  });
+    const componentPath = extractComponentPath(key, "demo");
+    const componentName = extractComponentName(key, "demo");
+    const demoName = extractDemoName(key);
 
-  docs.keys().forEach((key) => {
-    const name = extractComponentName(key, "index.js");
-    if (components[name]) {
-      components[name].docs = filterDocs(docs(key));
+    // initiate component if no demo was found for it
+    if (!components[componentName]) {
+      components[componentName] = {
+        demo: {},
+        docs: {},
+        readme: ""
+      }
+    }
+
+    // load a demo
+    components[componentName].demo = Object.assign({}, components[componentName].demo, {
+      [demoName]: {
+        source: demoSources(key),
+        component: demos(key)
+      }
+    })
+
+    if (docs.keys().includes(getComponentIndex(key))) {
+      components[componentName].docs = filterDocs(docs(getComponentIndex(key)));
+    }
+
+    if (readMes.keys().includes(getComponentReadme(key))) {
+      components[componentName].readme = readMes(getComponentReadme(key))
     }
   });
 
@@ -69,7 +108,7 @@ ReactDOM.render(
     <Exhibit
       readme={<Markdown>{readme}</Markdown>}
       baseURL={process.env.PUBLIC_URL}
-      label="<%= appName %>"
+      libName="<%= appName %>"
       components={requireAllDemos()} />
   </div>,
   document.getElementById("root"));
