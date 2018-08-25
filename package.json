@@ -76,6 +76,6 @@
       "git add"
     ]
   },
-  "repository": "au-re/generator-refresh",
+  "repository": "au-re/generator-react-exhibit",
   "license": "MIT"
 }
