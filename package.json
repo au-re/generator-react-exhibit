@@ -1,6 +1,6 @@
 {
   "name": "generator-react-exhibit",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Easily generate your own react component library, documentation included.",
   "homepage": "https://github.com/au-re/generator-react-exhibit",
   "author": {
