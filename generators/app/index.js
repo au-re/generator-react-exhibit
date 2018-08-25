@@ -94,6 +94,11 @@ module.exports = class extends Generator {
       this.templatePath("_gitignore"),
       this.destinationPath(`${this.options.appName}/.gitignore`));
 
+    // add npmignore this way, otherwise template is not added to npm
+    this.fs.copy(
+      this.templatePath("_npmignore"),
+      this.destinationPath(`${this.options.appName}/.npmignore`));
+
     this.fs.copyTpl(
       this.templatePath("_index.html"),
       this.destinationPath(`${this.options.appName}/public/index.html`),
