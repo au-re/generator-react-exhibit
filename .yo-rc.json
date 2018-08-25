@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Aurelien Franky",
+      "authorEmail": "au.re@live.com",
+      "authorUrl": "au-re.com"
+    }
+  }
+}

@@ -2,6 +2,9 @@ const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const path = require("path");
 
+const generatorName = "react-exhibit";
+const templateName = "react-exhibit-template";
+
 module.exports = class extends Generator {
 
   constructor(args, opts) {
@@ -14,22 +17,24 @@ module.exports = class extends Generator {
     }
   }
 
+  // private functions are prefixed with "_" (else they are executed in order)
+
   _logMissingAppName() {
     this.log("Please specify the project directory:");
-    this.log(`${chalk.cyan("yo react-exhibit")} ${chalk.green("<project-directory>")}`);
+    this.log(`${chalk.cyan(`yo ${generatorName}`)} ${chalk.green("<project-directory>")}`);
     this.log("");
     this.log("For example:");
-    this.log(`${chalk.cyan("yo react-exhibit")} ${chalk.green("my-react-exhibit")}`);
+    this.log(`${chalk.cyan(`yo ${generatorName}`)} ${chalk.green("my-project")}`);
     this.log("");
   }
 
   _logHelp() {
-    this.log(`Run ${chalk.cyan("yo react-exhibit --help")} to see all options.`);
+    this.log(`Run ${chalk.cyan(`yo ${generatorName} --help`)} to see all options.`);
     this.log("");
   }
 
   _logScaffolding() {
-    this.log(`Creating a new React library in ${chalk.green(this._getTargetDirectory())}`);
+    this.log(`Creating a new react library in ${chalk.green(this._getTargetDirectory())}`);
     this.log("");
   }
 
@@ -41,7 +46,7 @@ module.exports = class extends Generator {
 
   _logDone() {
     this.log("");
-    this.log(`Success! Created ${chalk.green(this.options.appName)} at ${chalk.green(this._getTargetDirectory())}`);
+    this.log(`Success! Created ${chalk.green(this.options.appName)} at ${chalk.green(process.cwd())}`);
     this.log("Inside that directory, you can run several commands:");
     this.log("");
     this.log(`Run ${chalk.cyan("npm start")} to start the development server.`);
@@ -62,33 +67,40 @@ module.exports = class extends Generator {
 
   writing() {
     this._logScaffolding();
-    this.fs.copy(
-      this.templatePath("_scripts"),
-      this.destinationPath(`${this.options.appName}/scripts`));
 
     this.fs.copy(
-      this.templatePath("_src"),
+      this.templatePath(`${templateName}/src`),
       this.destinationPath(`${this.options.appName}/src`));
 
     this.fs.copy(
-      this.templatePath("_config"),
-      this.destinationPath(`${this.options.appName}/config`));
-
-    this.fs.copy(
-      this.templatePath("_public"),
+      this.templatePath(`${templateName}/public`),
       this.destinationPath(`${this.options.appName}/public`));
 
     this.fs.copy(
-      this.templatePath("_.npmignore"),
-      this.destinationPath(`${this.options.appName}/.npmignore`));
+      this.templatePath(`${templateName}/.storybook`),
+      this.destinationPath(`${this.options.appName}/.storybook`));
 
     this.fs.copy(
-      this.templatePath("_.gitignore"),
+      this.templatePath(`${templateName}/config-overrides.js`),
+      this.destinationPath(`${this.options.appName}/config-overrides.js`));
+
+    this.fs.copy(
+      this.templatePath(`${templateName}/.eslintrc`),
+      this.destinationPath(`${this.options.appName}/.eslintrc`));
+
+    // add gitignore this way, since npm just removes it from packages
+    this.fs.copy(
+      this.templatePath("_gitignore"),
       this.destinationPath(`${this.options.appName}/.gitignore`));
 
     this.fs.copyTpl(
       this.templatePath("_index.html"),
       this.destinationPath(`${this.options.appName}/public/index.html`),
+      { appName: this.options.appName });
+
+    this.fs.copyTpl(
+      this.templatePath("_config.js"),
+      this.destinationPath(`${this.options.appName}/src/config/index.js`),
       { appName: this.options.appName });
 
     this.fs.copyTpl(
@@ -99,11 +111,6 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath("_package.json"),
       this.destinationPath(`${this.options.appName}/package.json`),
-      { appName: this.options.appName });
-
-    this.fs.copyTpl(
-      this.templatePath("_index.js"),
-      this.destinationPath(`${this.options.appName}/src/index.js`),
       { appName: this.options.appName });
 
     this.fs.copyTpl(
@@ -119,7 +126,6 @@ module.exports = class extends Generator {
       npm: true,
       bower: false,
       skipMessage: true,
-      callback: () => this._logDone()
-    });
+    }).then(() => this._logDone());
   }
 };

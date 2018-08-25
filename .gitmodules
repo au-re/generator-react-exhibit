@@ -1,0 +1,3 @@
+[submodule "generators/app/templates/react-exhibit-template"]
+	path = generators/app/templates/react-exhibit-template
+	url = git@github.com:au-re/react-exhibit-template.git
