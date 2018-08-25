@@ -100,7 +100,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("_config.js"),
-      this.destinationPath(`${this.options.appName}/src/config/index.js`),
+      this.destinationPath(`${this.options.appName}/.storybook/config.js`),
       { appName: this.options.appName });
 
     this.fs.copyTpl(

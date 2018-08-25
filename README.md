@@ -2,8 +2,7 @@
 [![License](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)](https://github.com/au-re/generator-react-exhibit/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/generator-react-exhibit)
 [![dependencies Status](https://david-dm.org/au-re/generator-react-exhibit/status.svg?style=flat-square)](https://david-dm.org/au-re/generator-react-exhibit)
-
-# generator-react-exhibit
+[![devDependencies Status](https://david-dm.org/au-re/generator-react-exhibit/dev-status.svg?style=flat-square)](https://david-dm.org/au-re/generator-react-exhibit?type=dev)
 
 A generator to create your own React component library, including
 documentation. It is built on top of [create-react-app](https://github.com/facebookincubator/create-react-app).
