@@ -10,6 +10,7 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
     this.argument("appName", { type: String, required: false });
+
     if (!this.options.appName && !this.options.help) {
       this._logMissingAppName();
       this._logHelp();
@@ -122,10 +123,10 @@ module.exports = class extends Generator {
   install() {
     this._logInstallation();
     process.chdir(this._getTargetDirectory());
-    this.installDependencies({
-      npm: true,
-      bower: false,
-      skipMessage: true,
-    }).then(() => this._logDone());
+    this.npmInstall();
+  }
+
+  end() {
+    this._logDone();
   }
 };
