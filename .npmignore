@@ -1,4 +1,0 @@
-# all folders that should not be published to npm
-.gitignore
-.npmignore
-.eslintrc
