@@ -15,18 +15,17 @@ View it live [here](https://au-re.github.io/react-exhibit-template/).
 You will need the following software installed on your machine:
 
 - [node](https://nodejs.org/en/)
+- [yeoman](http://yeoman.io/)
 
 We recomend installing **node** throught [nvm](https://github.com/creationix/nvm), as well as
 updating [npm](https://www.npmjs.com/) to version >=5.
 
-## Getting started
-
-You will need [Yeoman](http://yeoman.io/) installed to use this generator.
-You can install both with the following commands:
-
+You can install yeoman and this generator with the following commands:
 ```sh
 npm i -g yo generator-react-exhibit
 ```
+
+## Getting started
 
 Once installed you can generate your new project:
 
@@ -125,6 +124,15 @@ npm run analyze
 
 This will look into your `build` folder and open an interactive map of the dependencies in your
 browser.
+
+## Development
+
+Fetch template submodule:
+
+```sh
+git submodule update --init
+git submodule update --recursive --remote
+```
 
 ## License
 
