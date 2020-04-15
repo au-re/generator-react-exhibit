@@ -70,6 +70,10 @@ module.exports = class extends Generator {
     this._logScaffolding();
 
     this.fs.copy(
+      this.templatePath(`${templateName}/.plop`),
+      this.destinationPath(`${this.options.appName}/.plop`));
+
+    this.fs.copy(
       this.templatePath(`${templateName}/src`),
       this.destinationPath(`${this.options.appName}/src`));
 
@@ -89,6 +93,11 @@ module.exports = class extends Generator {
       this.templatePath(`${templateName}/.eslintrc`),
       this.destinationPath(`${this.options.appName}/.eslintrc`));
 
+    // skip CRA preflight checks
+    this.fs.copy(
+      this.templatePath(`${templateName}/.env`),
+      this.destinationPath(`${this.options.appName}/.env`));
+
     // add gitignore this way, since npm just removes it from packages
     this.fs.copy(
       this.templatePath("_gitignore"),
@@ -99,14 +108,20 @@ module.exports = class extends Generator {
       this.templatePath("_npmignore"),
       this.destinationPath(`${this.options.appName}/.npmignore`));
 
+    // storybook theme data
     this.fs.copyTpl(
-      this.templatePath("_config.js"),
-      this.destinationPath(`${this.options.appName}/.storybook/config.js`),
+      this.templatePath("_theme.js"),
+      this.destinationPath(`${this.options.appName}/.storybook/theme.js`),
       { appName: this.options.appName });
 
     this.fs.copyTpl(
       this.templatePath("_package.json"),
       this.destinationPath(`${this.options.appName}/package.json`),
+      { appName: this.options.appName });
+
+    this.fs.copy(
+      this.templatePath(`${templateName}/_package-lock.json`),
+      this.destinationPath(`${this.options.appName}/.package-lock.json`),
       { appName: this.options.appName });
 
     this.fs.copyTpl(
