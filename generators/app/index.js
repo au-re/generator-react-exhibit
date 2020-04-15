@@ -99,11 +99,6 @@ module.exports = class extends Generator {
       this.templatePath("_npmignore"),
       this.destinationPath(`${this.options.appName}/.npmignore`));
 
-    // add .env to skip preflight check, dependency issue
-    this.fs.copy(
-      this.templatePath("_env"),
-      this.destinationPath(`${this.options.appName}/.env`));
-
     this.fs.copyTpl(
       this.templatePath("_config.js"),
       this.destinationPath(`${this.options.appName}/.storybook/config.js`),

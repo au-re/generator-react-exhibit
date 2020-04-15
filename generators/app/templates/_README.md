@@ -29,13 +29,21 @@ npm start
 
 You can now open http://localhost:9009/ and view your component documentation.
 
-To include a component in the storybook, simply add a `<componentName>.stories.js` file in your
+To include a component in the storybook, simply add a `<componentName>.stories.mdx` file in your
 component folder, containing the stories you want to show. Have a look at the `Button` component for
 an example.
 
 ## Scripts
 
 A set of scripts are provided for you to test, build and analyze the project. Have a look at [create react app](https://github.com/facebook/create-react-app) for more information.
+
+### Creating new components
+
+This project uses plop to manage templates for components. You can create a new element by running:
+
+```sh
+npm run plop <MY COMPONENT NAME>
+```
 
 ### Test
 
@@ -121,4 +129,4 @@ npm install --save typescript @types/node @types/react @types/react-dom @types/j
 
 ## License
 
-[MIT](https://github.com/au-re/fresh-start/blob/master/LICENSE)
+[MIT](https://github.com/au-re/react-exhibit-template/blob/master/LICENSE)
