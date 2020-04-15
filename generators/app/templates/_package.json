@@ -14,6 +14,7 @@
     "coverage": "npm run test -- --coverage",
     "deploy": "gh-pages -d storybook-static",
     "predeploy": "npm run build:storybook",
+    "prepare": "npm run build",
     "eject": "react-scripts eject",
     "plop": "plop --plopfile ./.plop/plopfile.js",
     "commit": "git-cz"
