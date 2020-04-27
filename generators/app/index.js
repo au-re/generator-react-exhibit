@@ -1,9 +1,13 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const path = require("path");
+const { exec } = require("child_process");
 
 const generatorName = "react-exhibit";
-const templateName = "react-exhibit-template";
+const defaultTemplateName = "react-exhibit-template";
+const typescriptTemplateName = "typescript-exhibit-template";
+
+let templateName = "";
 
 module.exports = class extends Generator {
 
@@ -66,8 +70,22 @@ module.exports = class extends Generator {
     return path.join(process.cwd(), this.options.appName);
   }
 
-  writing() {
+  async _queryTypescriptUse() {
+    const answers = await this.prompt([
+      {
+        type: "confirm",
+        name: "typescript",
+        message: "Use typescript?",
+      },
+    ]);
+
+    templateName = answers[0] === false ? defaultTemplateName : typescriptTemplateName;
+  }
+
+  async writing() {
     this._logScaffolding();
+
+    await this._queryTypescriptUse();
 
     this.fs.copy(
       this.templatePath(`${templateName}/.plop`),
@@ -129,6 +147,17 @@ module.exports = class extends Generator {
       this.destinationPath(`${this.options.appName}/README.md`),
       { appName: this.options.appName });
   }
+
+  // async setupEslint() {
+  //   const init = new Promise((resolve, reject) => {
+  //     exec("npx eslint --init", (error, stdout, stderr) => {
+  //       if (error) reject(error);
+  //       if (stderr) reject(stderr);
+  //       resolve();
+  //     });
+  //   });
+  //   await init;
+  // }
 
   install() {
     this._logInstallation();

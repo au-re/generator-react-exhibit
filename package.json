@@ -3,6 +3,8 @@
   "version": "6.0.4",
   "description": "Easily generate your own react component library, documentation included.",
   "homepage": "https://github.com/au-re/generator-react-exhibit",
+  "repository": "https://github.com/au-re/generator-react-exhibit",
+  "license": "MIT",
   "author": {
     "name": "Aurelien Franky",
     "email": "au.re@live.com",
@@ -20,7 +22,7 @@
   ],
   "dependencies": {
     "chalk": "^4.0.0",
-    "yeoman-generator": "^4.8.2",
+    "yeoman-generator": "^4.9.0",
     "yosay": "^2.0.2"
   },
   "devDependencies": {
@@ -74,7 +76,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "repository": "au-re/generator-react-exhibit",
-  "license": "MIT"
+  }
 }
