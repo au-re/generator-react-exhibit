@@ -134,7 +134,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath("_README.md"),
       this.destinationPath(`${this.options.appName}/README.md`),
-      { appName: this.options.appName });
+      { appName: this.options.appName, homepageUrl });
 
     // add gitignore this way, since npm just removes it from packages
     this.fs.copy(

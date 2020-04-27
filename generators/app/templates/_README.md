@@ -1,132 +1,78 @@
+[npm-url]: https://www.npmjs.com/package/<%= appName %>
+[npm-image]: https://badge.fury.io/js/<%= appName %>.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[license-url]: https://github.com/au-re/<%= appName %>/LICENSE
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/au-re/generator-react-exhibit/master/assets/icon.png"/>
+</p>
+
 # <%= appName %>
 
-A component library template based on [create-react-app](https://github.com/facebook/create-react-app). Including documentation. This template is used by [generator-react-exhibit](generator-react-exhibit).
+[![npm][npm-image]][npm-url]
+[![Commitizen friendly][commitizen-image]][commitizen-url]
 
-View it live [here](https://au-re.github.io/react-exhibit-template/).
+> Some information about this library
 
-## Tech Stack
+You can see it in action here <%= homepageUrl %>
 
-| frontend          |             |
-| ------------------|-------------|
-| view library      | [react](https://reactjs.org/) |
-| boilerplate       | [create-react-app](https://github.com/facebook/create-react-app)|
-| documentation     | [storybook](https://github.com/storybooks/storybook) |
+## Example Usage
 
-## Getting started
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+import { Logo } from "<%= appName %>";
 
-You can use [generator-react-exhibit](generator-react-exhibit) to build your library. Simply run:
-
-```sh
-yo react-exhibit my-library
+ReactDOM.render(Logo, document.getElementById('root'));
 ```
 
-To view your library in action run:
+## Getting Started
 
-```sh
-cd my-library
-npm start
-```
+This section gives a quick example on how to get started.
 
-You can now open http://localhost:9009/ and view your component documentation.
+### Installation
 
-To include a component in the storybook, simply add a `<componentName>.stories.mdx` file in your
-component folder, containing the stories you want to show. Have a look at the `Button` component for
-an example.
-
-## Scripts
-
-A set of scripts are provided for you to test, build and analyze the project. Have a look at [create react app](https://github.com/facebook/create-react-app) for more information.
-
-### Creating new components
-
-This project uses plop to manage templates for components. You can create a new element by running:
-
-```sh
-npm run plop <MY COMPONENT NAME>
-```
-
-### Test
-
-You can run all tests in the project with the following command:
-
-```sh
-npm run test
-```
-
-You can also generate a website with information on the code coverage with:
-
-```sh
-npm run test -- --coverage
-```
-
-This will generate a website in the folder `coverage`. You can launch it with any server of your
-choice, for example [serve](https://www.npmjs.com/package/serve).
-
-```sh
-npm i -g serve && serve coverage
-```
-
-### Build
-
-You can build a production ready version of your library by running:
-
-```sh
-npm run build
-```
-
-This will create a build folder containing your library.
-
-You can also build a production ready version of your documentation by running:
-
-```sh
-npm run build:storybook
-```
-
-This will create a folder called `storybook-static` with your documentation.
-
-### Deploy
-
-After building your documentation, you can deploy it as a gh-page.
-Make sure to add a homepage entry in your `package.json` like so:
-
-```json
-{
-  "homepage": "https://my-github-name.github.io/my-library/",
-}
-```
-
-Then simply run:
-```sh
-npm run deploy
-```
-
-You can also publish your library to `npm`. To do that, simply run:
-
-```sh
-npm publish
-```
-
-### Dependency map
-
-You can generate a map of all dependencies, this can be very usefull when trying to identify a
-library causing bloat to the application. After building your application you can generate a map,
-by running:
-
-```sh
-npm run analyze
-```
-
-This will look into your `build` folder and open an interactive map of the dependencies in your
-browser.
-
-## Adding typescript
-
-Typescript support was added to `react-scripts@2.1.0`. To activate it, run:
+<%= appName %> can be installed via [npm](https://www.npmjs.com/package/<%= appName %>).
 
 ```
-npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+$ npm i -S <%= appName %>
 ```
+
+or from a CDN
+
+```html
+<script src="https://unpkg.com/<%= appName %>/lib/index.min.js"></script>
+```
+
+## API
+
+This section describes the API of the library.
+
+> ### `some.function`
+
+Some function that does something.
+
+```js
+some.function(does, something)
+```
+
+| Name | Type | Description | Required |
+| --- | --- | --- | --- |
+| `does` | `type` | description | required |
+| `something` | `type` | description | - |
+
+## Contributing
+
+We use the [airbnb style guide](https://github.com/airbnb/javascript) when writing javascript, with
+some minor modifications. Make sure eslint is installed and running before making changes, as it
+will ensure your coding style matches that of the project.
+
+We use [commitizen](https://github.com/commitizen/cz-cli) and
+[angular's conventional changelog](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits)
+to enforce a consistent commit format. When writing commits, make sure you run `npm run commit`
+instead of `git commit`.
 
 ## License
 
-[MIT](https://github.com/au-re/react-exhibit-template/blob/master/LICENSE)
+[MIT](license-url)
