@@ -2,6 +2,7 @@
 
 # storybook
 storybook-static
+.awcache
 
 # dependencies
 .cache
@@ -14,6 +15,7 @@ node_modules
 
 # production
 /build
+/lib
 
 # misc
 .DS_Store
